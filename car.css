@@ -1,0 +1,266 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-text-color: rgb(0, 0, 0);
+    --hover-background: rgba(244, 206, 20, 0.5);
+    --button-background: red;
+    --button-text-color: white;
+    --button-border-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    color: var(--main-text-color);
+    font-weight: 600;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    font-weight: 500;
+    font-size: 17px;
+    display: block;
+    padding: 10px 20px;
+    color: var(--main-text-color);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: var(--hover-background);
+    color: var(--main-text-color);
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content li a {
+    padding: 10px;
+    white-space: nowrap;
+    color: var(--main-text-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: var(--hover-background);
+    color: var(--main-text-color);
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: var(--main-text-color);
+    color: rgb(245, 247, 248);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--hover-background);
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.car-gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.car-wrapper {
+    text-align: center;
+}
+
+.car-gallery .car-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.car-info {
+    margin-top: 10px;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.exclusive {
+    font-size: 3rem;
+    color: red;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buy-btn,
+.see-more-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.buy-btn {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    margin-right: 10px;
+}
+
+.see-more-btn {
+    background-color: white;
+    border: 2px solid var(--button-border-color);
+}
+
+.buy-btn:hover {
+    opacity: 0.9;
+}
+
+.see-more-btn:hover {
+    background-color: var(--hover-background);
+}
+
+.car-image {
+    width: 500px;
+    animation: slideIn 2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .car-image {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .exclusive {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buy-btn, .see-more-btn {
+        margin: 5px 0;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .toggler {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .toggler {
+        display: none;
+    }
+}

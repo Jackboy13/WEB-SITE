@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Ren<span>things</span></h1>
+            <button class="toggler" aria-label="Toggle navigation">&#9776;</button>
+            <ul class="nav-link">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown"><a href="#service">Service</a>
+                    <ul class="dropdown-content">
+                        <li><a href="date.html">Dating site</a></li>
+                        <li><a href="car.html">Car Shop site</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>   
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="welcome-mess">
+            <h1>Welcome to Renthing!</h1>
+            <p>"Rent Anything, Anytime with Renthing!"</p>
+        </div>
+    </section>
+
+    <section class="about-content" id="about">
+        <div class="about-mess">
+            <h1>About Renthing</h1>
+            <br><p>Welcome to <strong>Renthing</strong>, your premier destination for renting a wide variety of items! Whether you need a car for a weekend getaway, a motorcycle for an adventurous ride, or any other rental service, we’ve got you covered.</p>
+            <br><p>At Renthing, we believe in making renting easy and accessible for everyone. Our user-friendly platform allows you to browse through a diverse selection of rental options, ensuring you find exactly what you need at competitive prices.</p>
+            <br><p>We pride ourselves on providing excellent customer service and a seamless experience from start to finish. Join us in embracing the convenience of renting—where you can rent anything, anytime!</p>
+        </div>
+    </section>
+
+    <section class="form-section" id="contact">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        const toggler = document.querySelector('.toggler');
+        const navLinks = document.querySelector('.nav-link');
+
+        toggler.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

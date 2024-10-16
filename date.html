@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="date.css">
+    <title>Dating Site</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Ren<span>things</span></h1>
+            <button class="toggler" aria-label="Toggle navigation">&#9776;</button>
+            <ul class="nav-link">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="home">
+        <div class="welcome-mess">
+            <h1>Welcome to Renthing Dating Site!</h1>
+            <p>Find your perfect match now!</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h1>Apply for Boyfriend/Girlfriend</h1>
+        <form id="application-form" action="/submit-application" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Your Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="requirements">What Are You Looking For?</label>
+            <textarea id="requirements" name="requirements" rows="5" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <script>
+        const toggler = document.querySelector('.toggler');
+        const navLinks = document.querySelector('.nav-link');
+
+        toggler.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
